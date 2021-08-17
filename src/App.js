@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Action } from "./components/Action/Action";
+import { AddOptions } from "./components/AddOptions/AddOptions";
+import { Header } from "./components/Header/Header";
+import { Options } from "./components/Options/Options";
 
+document.title = "INDECISION APP";
 
-
-
-
-
-// eslint-disable-next-line 
-class App extends Component{
-  constructor(){
-    super()
-  }
-
-  render(){
-    return(
+// eslint-disable-next-line
+class App extends React.Component {
+  render() {
+    return (
       <div>
-        <h1>Hello welcome to class based components</h1>
+        <Header />
+        <Action />
+        <Options />
+        <AddOptions />
       </div>
-    )
+    );
   }
 }
 
-
-
 export default App;
-
