@@ -3,7 +3,9 @@ export class Action extends React.Component {
   render() {
     return (
       <div>
-        <button>What should I do</button>
+        <button disabled={this.props.checkOptions} onClick={this.props.event}>
+          {this.props.text}
+        </button>
       </div>
     );
   }

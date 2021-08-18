@@ -1,14 +1,16 @@
 import React from "react";
+import { Option } from "../Option/Option";
 
 export class Options extends React.Component {
   render() {
+    const options = this.props.options;
     return (
       <div>
         <h3>Options</h3>
         <ol>
-          <li>take dry cleaning</li>
-          <li>Finish react course</li>
-          <li>Study english</li>
+          {options.map((e) => (
+            <Option element={e} />
+          ))}
         </ol>
       </div>
     );

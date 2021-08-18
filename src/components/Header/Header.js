@@ -4,8 +4,8 @@ export class Header extends React.Component {
   render() {
     return (
       <div>
-        <h1>This is from Header</h1>
-        <h2>Put your life in the hands of a computer</h2>
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.subTitle}</h2>
       </div>
     );
   }
