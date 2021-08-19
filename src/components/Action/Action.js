@@ -1,12 +1,10 @@
 import React from "react";
-export class Action extends React.Component {
-  render() {
-    return (
-      <div>
-        <button disabled={this.props.checkOptions} onClick={this.props.event}>
-          {this.props.text}
-        </button>
-      </div>
-    );
-  }
+export function Action(props) {
+  return (
+    <div>
+      <button disabled={props.checkOptions} onClick={props.event}>
+        {props.text}
+      </button>
+    </div>
+  );
 }

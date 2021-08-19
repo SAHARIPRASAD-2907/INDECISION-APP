@@ -7,7 +7,7 @@ export default class Counter extends React.Component {
     this.minusOne = this.minusOne.bind(this);
     this.reset = this.reset.bind(this);
     this.state = {
-      count: 0,
+      count: props.count,
     };
   }
   addOne = () => {
@@ -47,3 +47,7 @@ export default class Counter extends React.Component {
     );
   }
 }
+
+Counter.defaultProps = {
+  count: 0,
+};

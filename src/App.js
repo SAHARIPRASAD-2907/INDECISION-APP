@@ -12,17 +12,42 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.removeAll = this.removeAll.bind(this);
+    this.removeOne = this.removeOne.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.addOption = this.addOption.bind(this);
     this.state = {
       options: [],
     };
   }
+  //Just when application start
+  componentDidMount() {
+    console.log("fetching data");
+  }
+  //Changes when there are amy updates
+  componentDidUpdate(prevProps, prevState) {
+    console.log("saving data");
+  }
+  //Just before something is removed from DOM
+  componentWillUnmount() {
+    console.log("something removed");
+  }
+  //Pick what you want to do
   handlePick = () => {
     const len = this.state.options.length;
     const pick = Math.floor(Math.random() * len);
     alert(this.state.options[pick]);
   };
+  //Remove one element
+  removeOne = (optionToRemove) => {
+    this.setState((prevState) => {
+      return {
+        options: prevState.options.filter((option) => {
+          return !(option === optionToRemove);
+        }),
+      };
+    });
+  };
+  //Remove all elements
   removeAll = () => {
     console.log("Remove All");
     this.setState(() => {
@@ -31,24 +56,24 @@ class App extends React.Component {
       };
     });
   };
+  //Adding one option to do
   addOption = (option) => {
-    
     if (!option) {
       return "Enter a valid value to add item";
-    }else if(this.state.options.indexOf(option)>-1){
-      return "This option already exists"
+    } else if (this.state.options.indexOf(option) > -1) {
+      return "This option already exists";
     }
     this.setState((e) => {
       return {
         options: e.options.concat(option),
       };
     });
-    
   };
   render() {
     //Props for title and subtitle
     const title = "INDECISION APP";
     const subTitle = "Put your life in the hands of a computer";
+    //Props for button's
     const selectOptionButton = "What should I do?";
 
     return (
@@ -66,11 +91,20 @@ class App extends React.Component {
           event={this.removeAll}
           checkOptions={!(this.state.options.length > 0)}
         />
-        <Options options={this.state.options} />
+        <Options options={this.state.options} event={this.removeOne} />
         <AddOptions action={this.addOption} />
       </div>
     );
   }
 }
+
+const App1 = (props) => {
+  return (
+    <div>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+};
 
 export default App;
