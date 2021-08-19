@@ -3,6 +3,7 @@ import "./App.css";
 import { Action } from "./components/Action/Action";
 import { AddOptions } from "./components/AddOptions/AddOptions";
 import { Header } from "./components/Header/Header";
+import OptionModal from "./components/OptionModal/OptionModal";
 import { Options } from "./components/Options/Options";
 
 document.title = "INDECISION APP";
@@ -17,6 +18,7 @@ class App extends React.Component {
     this.addOption = this.addOption.bind(this);
     this.state = {
       options: [],
+      selected: undefined,
     };
   }
   //Just when application start
@@ -52,7 +54,13 @@ class App extends React.Component {
   handlePick = () => {
     const len = this.state.options.length;
     const pick = Math.floor(Math.random() * len);
-    alert(this.state.options[pick]);
+    this.setState(() => ({
+      selectOption: this.state.options[pick],
+    }));
+  };
+  //handle clear selected option
+  handleModalClose = () => {
+    this.setState(() => ({ selectOption: undefined }));
   };
   //Remove one element
   removeOne = (optionToRemove) => {
@@ -111,6 +119,10 @@ class App extends React.Component {
         {this.state.options.length === 0 && <p>Please add options to start</p>}
         <Options options={this.state.options} event={this.removeOne} />
         <AddOptions action={this.addOption} />
+        <OptionModal
+          selectOption={this.state.selectOption}
+          closeModal={this.handleModalClose}
+        />
       </div>
     );
   }
