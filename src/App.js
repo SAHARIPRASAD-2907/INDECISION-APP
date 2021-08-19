@@ -21,11 +21,28 @@ class App extends React.Component {
   }
   //Just when application start
   componentDidMount() {
-    console.log("fetching data");
+    try {
+      console.log("fetching data");
+      const json = localStorage.getItem("options");
+      const Newoptions = JSON.parse(json);
+      if (Newoptions) {
+        this.setState(() => {
+          return {
+            options: Newoptions,
+          };
+        });
+      }
+    } catch (e) {
+      //Do nothing at all
+    }
   }
   //Changes when there are amy updates
   componentDidUpdate(prevProps, prevState) {
-    console.log("saving data");
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem("options", json);
+      console.log("saving data");
+    }
   }
   //Just before something is removed from DOM
   componentWillUnmount() {
@@ -91,6 +108,7 @@ class App extends React.Component {
           event={this.removeAll}
           checkOptions={!(this.state.options.length > 0)}
         />
+        {this.state.options.length === 0 && <p>Please add options to start</p>}
         <Options options={this.state.options} event={this.removeOne} />
         <AddOptions action={this.addOption} />
       </div>
