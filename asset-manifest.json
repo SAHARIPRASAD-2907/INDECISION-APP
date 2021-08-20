@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/INDECISION-APP/static/css/main.c5b5fe4c.chunk.css",
+    "main.js": "/INDECISION-APP/static/js/main.ad48da94.chunk.js",
+    "main.js.map": "/INDECISION-APP/static/js/main.ad48da94.chunk.js.map",
+    "runtime-main.js": "/INDECISION-APP/static/js/runtime-main.08c6d6cf.js",
+    "runtime-main.js.map": "/INDECISION-APP/static/js/runtime-main.08c6d6cf.js.map",
+    "static/css/2.679831fc.chunk.css": "/INDECISION-APP/static/css/2.679831fc.chunk.css",
+    "static/js/2.54b2bcf9.chunk.js": "/INDECISION-APP/static/js/2.54b2bcf9.chunk.js",
+    "static/js/2.54b2bcf9.chunk.js.map": "/INDECISION-APP/static/js/2.54b2bcf9.chunk.js.map",
+    "index.html": "/INDECISION-APP/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/INDECISION-APP/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.c5b5fe4c.chunk.css.map": "/INDECISION-APP/static/css/main.c5b5fe4c.chunk.css.map",
+    "static/js/2.54b2bcf9.chunk.js.LICENSE.txt": "/INDECISION-APP/static/js/2.54b2bcf9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08c6d6cf.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.54b2bcf9.chunk.js",
+    "static/css/main.c5b5fe4c.chunk.css",
+    "static/js/main.ad48da94.chunk.js"
+  ]
+}
