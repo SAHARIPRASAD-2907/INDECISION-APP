@@ -1,0 +1,23 @@
+@import '../variables.css';
+
+.head{
+    background: var(--off-black);
+    color:white;
+    margin-bottom:var(--xl-size);
+    padding: var(--n-size) 0;
+}
+/* BEM block element modifier */
+
+/* Title */
+.head__title{
+    font-size: var(--l-size);
+    margin:0;
+}
+
+/* Subtitle */
+.head__subtitle{
+    color: var(--off-white);
+    font-size: var(--n-size);
+    font-weight: 500;
+    margin: 0;
+}

@@ -1,0 +1,16 @@
+@import '../variables.css';
+
+.option{
+    border-bottom: 1px solid rgba(var(--light-blue),10%);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--l-size) var(--n-size);
+}
+
+.option__text {
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+    word-break: break-all;
+}

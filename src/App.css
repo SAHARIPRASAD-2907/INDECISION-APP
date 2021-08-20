@@ -1,0 +1,46 @@
+@import './components/variables.css';
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--n-size);
+    background-color: var(--dark-blue);
+}
+
+
+.container{
+    max-width: 60rem;
+    margin: 0 auto;
+    padding:0 var(--n-size);
+}
+
+button{
+    cursor: pointer;
+}
+
+.widget__message{
+    border-bottom: 1px solid rgba(var(--light-blue),10%);
+    color: var(--off-white);
+    margin: 0;
+    padding: var(--l-size);
+    text-align: center;
+}
+
+.widget{
+    background: var(--light-blue);
+    margin-bottom: var(--xl-size);
+}
+
+.widget-header{
+    background: var(--blue);
+    color: var(--off-white);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--n-size);
+}
+
+.your-options{
+    margin: 0;
+}

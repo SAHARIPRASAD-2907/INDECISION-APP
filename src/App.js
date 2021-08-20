@@ -1,4 +1,5 @@
 import React from "react";
+import "normalize.css/normalize.css";
 import "./App.css";
 import { Action } from "./components/Action/Action";
 import { AddOptions } from "./components/AddOptions/AddOptions";
@@ -104,21 +105,34 @@ class App extends React.Component {
     return (
       <div>
         <Header title={title} subTitle={subTitle} />
+        <div className="container">
+          <Action
+            text={selectOptionButton}
+            event={this.handlePick}
+            checkOptions={!(this.state.options.length > 0)}
+            style={"big-button1"}
+          />
+          <div className="widget-header">
+            <h3 className="your-options">Your Options</h3>
+            {/* //Remove Al */}
+            <Action
+              text={"Remove All"}
+              event={this.removeAll}
+              checkOptions={!(this.state.options.length > 0)}
+              style="button button--link"
+            />
+          </div>
+          <div className="widget">
+            {this.state.options.length === 0 && (
+              <p className="widget__message">Please add options to start</p>
+            )}
+            <Options options={this.state.options} event={this.removeOne} />
+            <AddOptions action={this.addOption} />
+          </div>
+        </div>
+
         {/* //Choose option */}
-        <Action
-          text={selectOptionButton}
-          event={this.handlePick}
-          checkOptions={!(this.state.options.length > 0)}
-        />
-        {/* //Remove Al */}
-        <Action
-          text={"remove All"}
-          event={this.removeAll}
-          checkOptions={!(this.state.options.length > 0)}
-        />
-        {this.state.options.length === 0 && <p>Please add options to start</p>}
-        <Options options={this.state.options} event={this.removeOne} />
-        <AddOptions action={this.addOption} />
+
         <OptionModal
           selectOption={this.state.selectOption}
           closeModal={this.handleModalClose}
@@ -127,14 +141,5 @@ class App extends React.Component {
     );
   }
 }
-
-const App1 = (props) => {
-  return (
-    <div>
-      <p>Name: {props.name}</p>
-      <p>Age: {props.age}</p>
-    </div>
-  );
-};
 
 export default App;

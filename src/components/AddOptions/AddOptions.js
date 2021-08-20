@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./AddOption.css";
 export class AddOptions extends React.Component {
   constructor(props) {
     super(props);
@@ -22,11 +22,13 @@ export class AddOptions extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOption}>
-          <input placeholder={"Enter data"} name="option" />
-          <input type="submit" />
+        {this.state.error && (
+          <p className="add-option-error">{this.state.error}</p>
+        )}
+        <form className="add-option" onSubmit={this.handleOption}>
+          <input className="add-option__input" placeholder={"Enter data"} name="option" />
+          <input type="submit" className="button" />
         </form>
-        {this.state.error && <p>{this.state.error}</p>}
       </div>
     );
   }
